@@ -3,7 +3,7 @@ package com.producttask.task.service;
 import com.producttask.task.entity.Product;
 import com.producttask.task.exception.BusinessExceptions;
 import com.producttask.task.repository.ProductRepository;
-import dto.GeneralResponse;
+import com.producttask.task.dto.GeneralResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;

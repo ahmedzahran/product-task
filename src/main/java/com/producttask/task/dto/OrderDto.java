@@ -1,4 +1,4 @@
-package dto;
+package com.producttask.task.dto;
 
 import com.producttask.task.entity.Orders;
 import lombok.AllArgsConstructor;

@@ -1,20 +1,17 @@
 package com.producttask.task.service;
 
 import com.producttask.task.entity.Orders;
-import com.producttask.task.entity.Product;
 import com.producttask.task.exception.BusinessExceptions;
 import com.producttask.task.repository.OrderRepository;
 import com.producttask.task.repository.ProductRepository;
 import com.producttask.task.validation.DeliverOrderRequest;
 import com.producttask.task.validation.OrderCreationRequest;
-import dto.GeneralResponse;
-import dto.OrderDto;
+import com.producttask.task.dto.GeneralResponse;
+import com.producttask.task.dto.OrderDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class OrderService {

@@ -2,7 +2,7 @@ package com.producttask.task.controller;
 
 import com.producttask.task.exception.BusinessExceptions;
 import com.producttask.task.service.ProductService;
-import dto.GeneralResponse;
+import com.producttask.task.dto.GeneralResponse;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

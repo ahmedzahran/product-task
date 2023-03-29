@@ -1,7 +1,7 @@
 package com.producttask.task.exception;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dto.GeneralResponse;
+import com.producttask.task.dto.GeneralResponse;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

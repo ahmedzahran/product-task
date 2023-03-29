@@ -1,4 +1,4 @@
-package dto;
+package com.producttask.task.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
