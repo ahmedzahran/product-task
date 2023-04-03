@@ -16,6 +16,6 @@ public class OrderCreationRequest implements Serializable {
     @NotBlank(message = "address must exist")
     private String address;
 
-    @NotNull(message = "product id can`t be null")
-    private Integer productId;
+    @NotNull(message = "product serial can`t be null")
+    private Integer serial;
 }

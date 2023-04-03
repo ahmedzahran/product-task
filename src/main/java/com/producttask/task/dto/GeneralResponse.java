@@ -2,6 +2,7 @@ package com.producttask.task.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,13 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.ALWAYS)
+@Builder
 public class GeneralResponse implements Serializable {
+
+    private int pageNo;
+    private int pageSize;
+    private long totalElements;
+    private int totalPages;
 
     private Integer code;
     private String message;

@@ -11,5 +11,5 @@ import java.util.Optional;
 
 public interface ProductRepository  extends JpaRepository<Product,Integer> {
 
-    Optional<Product> findProductById(Integer id);
+    Optional<Product> findProductBySerialAndStatus(Integer serial,boolean status);
 }

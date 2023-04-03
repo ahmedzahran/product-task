@@ -7,7 +7,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 CREATE TABLE IF NOT EXISTS `product` (
     `id`         INTEGER  PRIMARY KEY AUTO_INCREMENT,
     `description` VARCHAR(150) NOT NULL,
-    `serial` VARCHAR(150) NOT NULL,
+    `serial` INTEGER NOT NULL UNIQUE,
+    `quantity` INTEGER NOT NULL ,
     `status` BOOLEAN NOT NULL Default true
 
     );

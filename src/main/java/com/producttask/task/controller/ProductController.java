@@ -7,6 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -20,7 +21,10 @@ public class ProductController {
     }
 
     @GetMapping
-    public ResponseEntity<GeneralResponse> list(Pageable pageable) throws BusinessExceptions {
-        return productService.list(pageable);
+    public ResponseEntity<GeneralResponse> list(
+            @RequestParam(value = "pageNo", defaultValue = "0", required = false) int pageNo,
+            @RequestParam(value = "pageSize", defaultValue = "10", required = false) int pageSize
+    ) throws BusinessExceptions {
+        return productService.list(pageNo, pageSize);
     }
 }

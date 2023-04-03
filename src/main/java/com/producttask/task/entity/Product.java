@@ -27,8 +27,11 @@ public class Product {
     @Column(name = "description", nullable = false, length = 150)
     private String description;
 
-    @Column(name = "serial", nullable = false, length = 150)
-    private String serial;
+    @Column(name = "serial", nullable = false, unique = true)
+    private Integer serial;
+
+    @Column(name = "quantity",nullable = false)
+    private Integer quantity;
 
     @Column(name = "status")
     private Boolean status;

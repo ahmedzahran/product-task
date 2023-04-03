@@ -8,6 +8,7 @@ import com.producttask.task.validation.DeliverOrderRequest;
 import com.producttask.task.validation.OrderCreationRequest;
 import com.producttask.task.dto.GeneralResponse;
 import com.producttask.task.dto.OrderDto;
+import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -25,14 +26,20 @@ public class OrderService {
     }
 
 
+    @Transactional
     public ResponseEntity<GeneralResponse> createOrder(OrderCreationRequest request) throws BusinessExceptions {
 
-        var product = productRepository.findProductById(request.getProductId())
-                .orElseThrow(() -> new BusinessExceptions("product not found"));
+        var product = productRepository.findProductBySerialAndStatus(request.getSerial(),true)
+                .orElseThrow(() -> new BusinessExceptions("product not available"));
 
         Orders order = new Orders();
         order.setAddress(request.getAddress());
         order.setProduct(product);
+        product.setQuantity(product.getQuantity() - 1);
+        if (product.getQuantity() == 0){
+            product.setStatus(false);
+        }
+        productRepository.save(product);
         orderRepository.save(order);
         return new GeneralResponse().response(new OrderDto(order));
 
